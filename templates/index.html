@@ -5,19 +5,35 @@
 {% endblock head %}
 
 {% block hero %}
-<div class="hero-text">
-    <h1 class="tagline">
-        Easy to use, customizable, efficient 3D renderer library written in pure rust
-    </h1>
+<div class="hero-parent">
+    <div class="hero-text">
+        <h1 class="tagline">
+            Easy to use, customizable, efficient 3D renderer library written in pure rust
+        </h1>
+    </div>
+
+    <video autoplay muted loop class="hero-video">
+        <source src="https://cdn.cwfitz.com/rend3.rs/scifi-demo.mp4" type="video/mp4">
+
+        <img src="{{ get_url(path='scifi-base.jpg') }}">
+    </video>
 </div>
-
-<video autoplay muted class="hero-image">
-    <source src="https://cdn.cwfitz.com/rend3.rs/scifi-demo.mp4" type="video/mp4">
-
-    <img src="{{ get_url(path='scifi-base.jpg') }}">
-</video>
 {% endblock hero %}
 
 {% block favicon %}
 <link rel="icon" type="image/png" href="{{ get_url(path='logo.png') }}">
 {% endblock favicon %}
+
+{% block content %}
+
+{% endblock content %}
+
+{% block footer %}
+<footer>
+    <small class="subtext">
+        <a href="https://github.com/BVE-Reborn/rend3">github</a>
+        <a href="https://matrix.to/#/#rend3:matrix.org">matrix</a>
+        <a href="https://discord.gg/mjxXTVzaDg">discord</a>
+    </small>
+</footer>
+{% endblock footer %}

@@ -21,6 +21,8 @@ highlight_code = true
 juice_logo_name = "rend3"
 juice_logo_path = "logo.png"
 juice_extra_menu = [
-    { title = "Github", link = "https://github.com/BVE-Reborn/rend3" }
+    { title = "Github", link = "https://github.com/BVE-Reborn/rend3" },
+    { title = "Matrix", link = "https://matrix.to/#/#rend3:matrix.org" },
+    { title = "Discord", link = "https://discord.gg/mjxXTVzaDg" },
 ]
 repository_url = "https://github.com/BVE-Reborn/rend3"

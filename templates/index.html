@@ -1,0 +1,21 @@
+{% extends "juice/templates/index.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ get_url(path='rend3.css') }}">
+{% endblock head %}
+
+{% block hero %}
+<div class="hero-text">
+    <h1 class="tagline">
+        Easy to use, customizable, efficient 3D renderer library written in pure rust
+    </h1>
+</div>
+
+<video autoplay muted class="hero-image">
+    <source src="https://cdn.cwfitz.com/rend3.rs/scifi-demo.mp4" type="video/mp4">
+</video>
+{% endblock hero %}
+
+{% block favicon %}
+<link rel="icon" type="image/png" href="{{ get_url(path='logo.png') }}">
+{% endblock favicon %}

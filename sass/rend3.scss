@@ -27,17 +27,11 @@
     align-items: center;
     height: 100%;
     @include mobile {
-        flex-flow: column wrap;
+        flex-flow: column;
         justify-content: flex-start;
     }
-    @include phone {
-        padding-top: 150px;
-    }
-    @include tablet {
-        padding-top: 200px;
-    }
     @include desktop {
-        flex-flow: row nowrap;
+        flex-flow: row;
         justify-content: space-evenly;
     }
 }
@@ -69,4 +63,39 @@
     }
     margin-top: 16px;
     margin-bottom: 16px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    margin: 8px;
+    @include phone {
+        flex-direction: column;
+    } 
+}
+
+body {
+    align-content: stretch;
+}
+
+.logo {
+    margin-left: 0px;
+    margin-right: 20px;
+}
+
+.logo img {
+    margin-left: 0px;
+}
+
+.hero {
+    height: 100%;
+    flex-grow: 1;
+    @include mobile {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}
+
+.pos-absolute {
+    position: unset;
 }

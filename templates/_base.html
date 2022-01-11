@@ -15,10 +15,12 @@
                 <h2 class="toc-header">{{parent.title}}</h2>
             </a>
             {% for subpage in parent.pages %}
+            {% set selected = page and subpage.permalink == page.permalink %}
             <div class="toc-item">
-                <a class="subtext" href="{{subpage.permalink | safe}}">{{ subpage.title }}</a>
+                <a class="subtext {% if selected %}active{% endif %}" href="{{subpage.permalink | safe}}">{{
+                    subpage.title }}</a>
             </div>
-            {% if page and subpage == page %}
+            {% if page and subpage.permalink == page.permalink %}
             {% for h in subpage.toc %}
             <div class="toc-item-child">
                 <a class="subtext" href="{{ h.permalink | safe }}"><small>- {{ h.title }}</small></a>

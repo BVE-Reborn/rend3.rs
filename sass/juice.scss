@@ -113,6 +113,7 @@ main {
 
   .toc-item a.active, .toc-item-child a.active {
     color: var(--toc-highlight-text-color);
+    font-weight: bold;
   }
 
   .toc-item-child {
@@ -160,7 +161,7 @@ footer {
 @media screen and (min-width: 1280px) {
   .content {
     max-width: 60%;
-    min-width: 800px;
+    width: 750px;
   }
 }
 

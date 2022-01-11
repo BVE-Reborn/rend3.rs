@@ -138,7 +138,7 @@ main {
 }
 
 footer {
-  padding: 50px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -149,6 +149,11 @@ footer {
   a {
     color: #fcfcfc;
     text-decoration: underline;
+  }
+
+  .subtext {
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 }
 

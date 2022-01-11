@@ -1,0 +1,44 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><title>Getting Started | rend3 3D Rendering Library </title><meta content="width=device-width,initial-scale=1,shrink-to-fit=no"name=viewport><link href=https://rend3.rs/logo.png rel=icon type=image/png><style>:root {
+        /* Primary theme color */
+        --primary-color: #FED43F;
+        /* Primary theme text color */
+        --primary-text-color: #543631;
+        /* Primary theme link color */
+        --primary-link-color: #F9BB2D;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcfaf6;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #d46e13;
+    }</style><link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap"rel=stylesheet><link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap"rel=stylesheet><link href=/normalize.css rel=stylesheet><link href=https://rend3.rs/juice.css rel=stylesheet><link href=https://rend3.rs/rend3.css rel=stylesheet><body><header class=box-shadow><div class=header-left><a href=https://rend3.rs/> <div class=logo><img alt=logo height=60 src=https://rend3.rs/logo.png width=60> rend3</div> </a><nav><a class="nav-item subtitle-text"href=https://rend3.rs/guide/>Guide</a></nav></div><nav><a class="nav-item subtitle-text"href=https://github.com/BVE-Reborn/rend3>Github</a><a class="nav-item subtitle-text"href=https://matrix.to/#/#rend3:matrix.org>Matrix</a><a class="nav-item subtitle-text"href=https://discord.gg/mjxXTVzaDg>Discord</a></nav></header><main><div class=toc><div class=toc-sticky><a class=subtext href=https://rend3.rs/guide/> <h2 class=toc-header>Guide</h2> </a><div class=toc-item><a class="subtext active"href=https://rend3.rs/guide/1-getting-started/>Getting Started</a></div><div class=toc-item-child><a class=subtext href=https://rend3.rs/guide/1-getting-started/#beginning><small>- Beginning</small></a></div><div class=toc-item><a class=subtext href=https://rend3.rs/guide/2-continuing-started/>Building a World</a></div></div></div><div class="content text"><div class=heading-text>Getting Started with rend3</div><p>Content<h1 id=beginning>Beginning</h1></div><div class=toc></div></main><footer><small class=subtext> <a href=https://github.com/BVE-Reborn/rend3>github</a> <a href=https://matrix.to/#/#rend3:matrix.org>matrix</a> <a href=https://discord.gg/mjxXTVzaDg>discord</a> </small><small class=subtext> <a href=https://github.com/BVE-Reborn/rend3>help the website!</a> </small></footer></body><script>function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+        document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }</script>

@@ -1,0 +1,44 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><title>rend3 3D Rendering Library</title><meta content="width=device-width,initial-scale=1,shrink-to-fit=no"name=viewport><link href=https://rend3.rs/logo.png rel=icon type=image/png><style>:root {
+        /* Primary theme color */
+        --primary-color: #FED43F;
+        /* Primary theme text color */
+        --primary-text-color: #543631;
+        /* Primary theme link color */
+        --primary-link-color: #F9BB2D;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcfaf6;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #d46e13;
+    }</style><link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap"rel=stylesheet><link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap"rel=stylesheet><link href=/normalize.css rel=stylesheet><link href=https://rend3.rs/juice.css rel=stylesheet><link href=https://rend3.rs/rend3.css rel=stylesheet><body><header><div class=header-left><a href=https://rend3.rs/> <div class=logo><img alt=logo height=60 src=https://rend3.rs/logo.png width=60> rend3</div> </a><nav><a class="nav-item subtitle-text"href=https://rend3.rs/guide/>Guide</a></nav></div><nav><a class="nav-item subtitle-text"href=https://github.com/BVE-Reborn/rend3>Github</a><a class="nav-item subtitle-text"href=https://matrix.to/#/#rend3:matrix.org>Matrix</a><a class="nav-item subtitle-text"href=https://discord.gg/mjxXTVzaDg>Discord</a></nav></header><div class=hero><div class=hero-parent><div class=hero-text><h1 class=tagline>Easy to use, customizable, efficient 3D renderer library written in pure rust</h1></div><video autoplay class=hero-video disableremoteplayback loop muted><source src=https://cdn.cwfitz.com/rend3.rs/scifi-demo.mp4 type=video/mp4> <img src=https://rend3.rs/scifi-base.jpg></video></div></div></body><script>function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+        document.querySelector(".toc a[href$='" + pathname + "#" + heading + "']").classList.add("active");
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }</script>

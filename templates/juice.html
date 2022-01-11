@@ -7,13 +7,14 @@
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% block favicon %}
-    <link rel="icon" type="image/png" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="{{ get_url(path=config.extra.juice_logo_path) }}">
     {% endblock favicon %}
     {% include "_variables.html" %}
     <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/normalize.css">
     <link rel="stylesheet" href="{{ get_url(path='juice.css') }}">
+    <link rel="stylesheet" href="{{ get_url(path='rend3.css') }}">
     {% block head %}
     {% endblock head %}
 </head>
@@ -67,6 +68,10 @@
     </div>
 
     {% endblock header %}
+
+    {% block inner %}
+
+    {% endblock inner %}
 </body>
 <script>
     function highlightNav(heading) {

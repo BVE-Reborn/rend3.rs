@@ -1,7 +1,7 @@
 {% import "_macros.html" as macros %}
 {% extends "_base.html" %}
 
-{% block title %}{{ page.title }} | {{ super() }} {% endblock title %}
+{% block title %}{{ section.title }} | {{ super() }} {% endblock title %}
 
 {% block header %}
 <header class="box-shadow">
@@ -10,6 +10,7 @@
 {% endblock header %}
 
 {% block content %}
-<div class="heading-text">{{ page.description }}</div>
-{{ page.content | safe }}
+    <div class="heading-text">{{ section.description }}</div>
+
+    {{ section.content | safe }}
 {% endblock content %}
